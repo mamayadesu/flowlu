@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Проверка корректности скобок</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                font-family: Segoe;
+                padding: 5px;
+            }
+            #error {
+                background-color: #FF896F;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                padding-left: 5px;
+                width: 30%;
+                border: 2px solid red;
+                border-left: 5px solid red;
+                margin: 3px;
+            }
+            #success {
+                background-color: #C0FFB4;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                padding-left: 5px;
+                width: 30%;
+                border: 2px solid green;
+                border-left: 5px solid green;
+                margin: 3px;
+            }
+            #expression {
+                width: 450px;
+            }
+        </style>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div id="error" style="display: none;">В вашем выражении допущены ошибки</div>
+        <div id="success" style="display: none;">Скобки расставлены корректно!</div>
+        
+        <p>Для проверки корректности расставления скобок введите своё выражение ниже</p>
+        <p>Допускаются следующие скобки: <code><b>( { [ < > ] } )</b></code></p>
+        <input type="text" id="expression" placeholder="Введите своё выражение сюда"><br><br>
+        <input type="button" id="check" value="Проверить" onclick="check();">
+        <hr>
+        <div id="history">Загрузка истории проверок...</div>
+    </body>
+</html>
