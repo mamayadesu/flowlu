@@ -1,3 +1,17 @@
+window.eventbus = new EventBus();
+window.eventbus.subscribe("page_loaded", function()
+{
+    console.log("страница загружена");
+    document.getElementById("error").style.display = "none";
+    document.getElementById("success").style.display = "none";
+    loadHistory();
+});
+
+eventbus.subscribe("page_loaded", function()
+{
+    console.log("I <3 Flowlu");
+});
+
 function loadHistory()
 {
     var xhr = new XMLHttpRequest();
@@ -92,8 +106,5 @@ function check()
 
 window.onload = function()
 {
-    console.log("страница загружена");
-    document.getElementById("error").style.display = "none";
-    document.getElementById("success").style.display = "none";
-    loadHistory();
+    window.eventbus.publisher("page_loaded");
 };
